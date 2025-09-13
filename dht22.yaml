@@ -11,11 +11,11 @@ logger:
 # Enable Home Assistant API
 api:
   encryption:
-    key: "key"
+    key: "key12345678901234567890123456789012"
 
 ota:
   - platform: esphome
-    password: "password"
+    password: "password123"
 
 wifi:
   ssid: !secret wifi_ssid
@@ -24,7 +24,7 @@ wifi:
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "Esp1 Fallback Hotspot"
-    password: "password"
+    password: "password123"
 
 captive_portal:
 
@@ -34,8 +34,8 @@ sensor:
     model: DHT22
     temperature:
       name: "Kinderzimmer Temperatur"
-      id: living_room_temp
+      id: kinderzimmer_temp
     humidity:
       name: "Kinderzimmer Luftfeuchtigkeit"
-      id: living_room_hum
+      id: kinderzimmer_luf
     update_interval: 60s
