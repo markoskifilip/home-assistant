@@ -26,9 +26,6 @@ wifi:
     ssid: "EspKind Fallback Hotspot"
     password: "O5sVVadDKkDG"
 
-  on_connect:
-    - switch.turn_on: gpio01
-
 captive_portal:
 
 sensor:
