@@ -31,7 +31,7 @@ captive_portal:
 sensor:
   - platform: dht
     pin: GPIO2
-    model: DHT22
+    #model: DHT22
     temperature:
       name: "Kinderzimmer Temperatur"
       id: kinderzimmer_temp
@@ -41,3 +41,14 @@ sensor:
       name: "Kinderzimmer Luftfeuchtigkeit"
       id: kinderzimmer_luf
     update_interval: 150s
+
+switch:
+  - platform: gpio
+    pin:
+      number: GPIO01
+      inverted: true
+    id: gpio01
+    name: 'gpio01'
+  - platform: restart
+    name: resEspTempKind
+    id: resEspTempKind
