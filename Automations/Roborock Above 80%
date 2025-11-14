@@ -1,0 +1,20 @@
+alias: Roborock Above 80%
+description: ""
+triggers:
+  - entity_id: sensor.roborock_s7_batterie
+    above: 80
+    trigger: numeric_state
+conditions:
+  - condition: state
+    entity_id: vacuum.roborock_s7
+    attribute: status
+    state: charging
+actions:
+  - action: roborock.vacuum_goto
+    metadata: {}
+    data:
+      x_coord: "25559"
+      y_coord: "25734"
+    target:
+      entity_id: vacuum.roborock_s7
+mode: single
