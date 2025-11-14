@@ -1,0 +1,17 @@
+alias: Roborock Below 70%
+description: ""
+triggers:
+  - entity_id:
+      - sensor.roborock_s7_batterie
+    trigger: numeric_state
+    below: 70
+conditions:
+  - condition: state
+    entity_id: vacuum.roborock_s7
+    state: idle
+actions:
+  - device_id: 7311f4b3c3ef9da744effc714d38f89c
+    domain: vacuum
+    entity_id: 89a42459a0cb84554b2293dba990d0ce
+    type: dock
+mode: single
