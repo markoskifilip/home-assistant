@@ -1,9 +1,7 @@
 alias: Roborock Dust Bin
-description: Empty the trail every 90m2
+description: Empty the trail every 2 cleanings
 triggers:
-  - value_template: >-
-      {{ states('sensor.roborock_s7_gesamte_reinigungsflache') | int % 90 == 0
-      }}
+  - value_template: "{{ states('sensor.roborock_s7_anzahl_reinigungen') | int % 2 == 0 }}"
     trigger: template
 conditions: []
 actions:
