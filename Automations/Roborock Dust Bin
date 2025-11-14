@@ -1,0 +1,14 @@
+alias: Roborock Dust Bin
+description: Empty the trail every 90m2
+triggers:
+  - value_template: >-
+      {{ states('sensor.roborock_s7_gesamte_reinigungsflache') | int % 90 == 0
+      }}
+    trigger: template
+conditions: []
+actions:
+  - action: notify.mobile_app_sm_s901b
+    metadata: {}
+    data:
+      message: Dust bin is full!
+mode: single
