@@ -1,0 +1,18 @@
+alias: Thermostat
+description: ""
+triggers:
+  - trigger: numeric_state
+    entity_id:
+      - sensor.esptempkind_kinderzimmer_temperatur
+    above: 20.1
+  - trigger: numeric_state
+    entity_id:
+      - sensor.esptempkind_kinderzimmer_temperatur
+    below: 19.8
+conditions: []
+actions:
+  - type: turn_on
+    device_id: e18958c171840ff23cdde198a8f34819
+    entity_id: 8179583883153ba74ff0854451ed1308
+    domain: switch
+mode: single
